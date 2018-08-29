@@ -1,0 +1,25 @@
+switch:
+  - platform: rest
+    name: "Shelly2 Switch1"
+    scan_interval: 5
+    resource: http://192.168.86.58/relay/0
+    body_on: 'turn=on'
+    body_off: 'turn=off'
+    is_on_template: '{{ value_json.ison == true}}'
+    headers:
+      content-type: application/x-www-form-urlencoded
+  - platform: rest
+    name: "Shelly2 Switch2"
+    scan_interval: 5
+    resource: http://192.168.86.58/relay/1
+    body_on: 'turn=on'
+    body_off: 'turn=off'
+    is_on_template: '{{ value_json.ison == true}}'
+    headers:
+      content-type: application/x-www-form-urlencoded
+sensor:
+  - platform: rest
+    resource: http://192.168.86.58/status
+    name: Shelly2 Power
+    value_template: '{{ value_json.meters[0]["power"]}}'
+    scan_interval: 5
