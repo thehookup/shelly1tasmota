@@ -1,0 +1,16 @@
+#The definitive best way to set up your Tasmota switches in Home Assistant:
+#Tasmota Console Command: SwitchRetain Off
+#Tasmota Console Command: ButtonRetain On
+#Tasmota Console Command: ButtonRetain Off
+#Tasmota Console Command: PowerRetain On
+
+  - platform: mqtt
+    name: "Tasmota Switch"
+    state_topic: "stat/device_name/POWER"
+    command_topic: "cmnd/device_name/POWER"
+    availability_topic: "tele/device_name/LWT"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: false
