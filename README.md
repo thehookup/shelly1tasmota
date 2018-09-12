@@ -1,4 +1,10 @@
 # shelly1tasmota
+
+https://www.youtube.com/watch?v=J20hxfUTP9I
+
+
+Updated: Official Tasmota Branch now supports shelly devices.
+
 Shelly 1 Tasmota .bin file
 
 Removed INPUT_PULLUP on switches and changed to INPUT
