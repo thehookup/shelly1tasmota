@@ -1,0 +1,33 @@
+switch:
+  - platform: mqtt
+    name: "Tasmota Shelly2 MQTT 1"
+    state_topic: "stat/Shelly2Tasmota/POWER1"
+    command_topic: "cmnd/Shelly2Tasmota/POWER1"
+    availability_topic: "tele/Shelly2Tasmota/LWT"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: false
+  - platform: mqtt
+    name: "Tasmota Shelly2 MQTT 2"
+    state_topic: "stat/Shelly2Tasmota/POWER2"
+    command_topic: "cmnd/Shelly2Tasmota/POWER2"
+    availability_topic: "tele/Shelly2Tasmota/LWT"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: false
+	
+sensor:
+  - platform: mqtt
+    name: "Tasmota Shelly2 Power"
+    state_topic: "tele/Shelly2Tasmota/SENSOR"
+    value_template: "{{ value_json.ENERGY.Power }}"
+    unit_of_measurement: 'Watts'
+  - platform: mqtt
+    name: "Tasmota Shelly2 Energy"
+    state_topic: "tele/Shelly2Tasmota/SENSOR"
+    value_template: "{{ value_json.ENERGY.Total }}"
+    unit_of_measurement: 'kWh'

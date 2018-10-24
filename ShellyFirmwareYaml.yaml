@@ -1,0 +1,25 @@
+switch:
+  - platform: mqtt
+    name: "Factory Shelly2 MQTT 1"
+    state_topic: "shellies/shellyswitch-9F6280/relay/0"
+    command_topic: "shellies/shellyswitch-9F6280/relay/0/command"
+    payload_on: "on"
+    payload_off: "off"
+    retain: false
+  - platform: mqtt
+    name: "Factory Shelly2 MQTT 2"
+    state_topic: "shellies/shellyswitch-9F6280/relay/1"
+    command_topic: "shellies/shellyswitch-9F6280/relay/1/command"
+    payload_on: "on"
+    payload_off: "off"
+    retain: false
+	
+sensor:
+  - platform: mqtt
+    name: "Factory Shelly2 Power"
+    state_topic: "shellies/shellyswitch-9F6280/relay/power"
+    unit_of_measurement: "Watts"    
+  - platform: mqtt
+    name: "Factory Shelly2 Energy"
+    state_topic: "shellies/shellyswitch-9F6280/relay/energy" 
+    unit_of_measurement: "kWh" 
