@@ -1,0 +1,23 @@
+sensor:
+  - platform: mqtt
+    name: "Scarlett iPad History"
+    state_topic: "history/ipad"
+  - platform: mqtt
+    name: "Shelly HT Temp"
+    state_topic: "shellies/shellyht-12D951/sensor/temperature"
+  - platform: mqtt
+    name: "Shelly HT Humidity"
+    state_topic: "shellies/shellyht-12D951/sensor/humidity"
+  - platform: mqtt
+    name: "Shelly HT Battery"
+    state_topic: "shellies/shellyht-12D951/sensor/battery"
+  - platform: mqtt
+    name: "Shelly Smoke Temp"
+    state_topic: "shellies/shellysmoke-5B8979/sensor/temperature"
+  - platform: mqtt
+    name: "Shelly Smoke Smoke"
+    state_topic: "shellies/shellysmoke-5B8979/sensor/smoke"
+  - platform: mqtt
+    name: "Shelly Smoke Battery"
+    state_topic: "shellies/shellysmoke-5B8979/sensor/battery"
+  - platform: mqtt
